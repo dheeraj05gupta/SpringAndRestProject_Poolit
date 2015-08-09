@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="carshare, car share, car sharing, car-sharing, carsharing, rideshare, ride share, ride-share, carpool, carpooling, car pooling india,car pooling pune, car pooling gurgaon, car pooling hyderabad, car pooling Delhi, car pooling mumbai, car pooling service, Pooling, traffic, traffic congestion, Poolit, car pooling services in india">
+    <meta name="keyphrase" content="car pooling, car pool, car pooling india,  car pooling pune, car pooling banglore, car pooling delhi" />
+    <meta name="description" content="Carpooling is seen as a more environmentally friendly and sustainable way to travel as sharing journeys reduces carbon emissions, traffic congestion on the roads, and the need for parking spaces."/>
+    <meta name="robots" content="index, follow">
+    <meta property="og:site_name" content="Poolit" />
+    <meta property="og:url" content="http://www.poolit.in" />
+    <meta property="og:image" content="http://www.poolit.in/image/logo.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Poolit">
+    <title>Poolit, the platform for car pooling/ ride sharing within city and from city-to-city | poolit.in</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/moment.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.js"></script>
+    <script src="js/ui-bootstrap-tpls-0.12.0.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/factories.js"></script>
+    <script src="js/ajax-service.js"></script>
+    <script src="js/main-controller.js"></script>
+    <script src="search/search.js"></script>
+    <script src="search/post-carpool.js"></script>
+    <script src="search/view-carpool.js"></script>
+    <script src="register/register.js"></script>
+    <script src="myProfile/my-profile.js"></script>
+    <script src="forgotPassword/forgot-password.js"></script>
+    <script src="aboutUs/about-us.js"></script>
+</head>
+<body ng-controller="MainCtrl" id="carpool-app">
+<div class="cp-feedback-div" style="" ng-click="openFeedback()">FEEDBACK
+</div>
+<div style="width: 100%; float: left; height: 110px;" >
+    <div style="width: 1200px; margin: 0 auto; height: 100%;">
+        <div class="cp-logo-div" ng-click="goHome()">
+
+        </div>
+        <div style="float: right;">
+            <div style="margin-top: 2px;">
+                <a href="https://www.facebook.com/" target="_blank">
+                    <img src="http://upload.wikimedia.org/wikipedia/commons/c/cd/Facebook_logo_%28square%29.png"
+                         style="height: 29px; width: 30px;"/>
+                </a>
+                <a href="https://twitter.com/" target="_blank">
+                    <img src="https://girlcrushrock.files.wordpress.com/2012/09/twitter-icon.png"
+                         style="height: 29px; width: 30px;"/>
+                </a>
+            </div>
+            <div style="margin-top: 10px; float: right;" ng-if="!isAuth.isAuthenticated">
+                <a ng-click="openLogin()">Login</a>
+                &nbsp;|&nbsp;
+                <a href="#/register">Register</a>
+            </div>
+            <div style="margin-top: 10px; float: right;" ng-if="isAuth.isAuthenticated">
+                <a href="#/myProfile">My Profile</a>
+                &nbsp;|&nbsp;
+                <a ng-click="logout()">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-view></div>
+<div class="cp-footer">
+    <div style="width: 1100px; margin: 0 auto;">
+        <a href="#/aboutUs">About us</a>
+        <a>How it works</a>
+        <a>Articles</a>
+        <a>Testimonials</a>
+        <a>FAQs</a>
+        <a>Terms and Conditions</a>
+        <a>Privacy policy</a>
+        <a> Contact us</a>
+    </div>
+</div>
+</body>
+</html>

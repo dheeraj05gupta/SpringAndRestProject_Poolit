@@ -1,0 +1,183 @@
+<div class="cp-register-row-big" ng-show="isLocal">
+    <div class="cp-register-row-small">
+        <div class="dropdown">
+            <label>City:</label>
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"
+                    aria-expanded="true" style="text-align: left; width: 100%;">
+                 <span class="cp-btn-text">Select City</span>
+                <span class="caret" style="float: right; margin-top: 9px;"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation" ng-repeat="city in cities"><a role="menuitem" tabindex="-1"
+                                                                      href="#">{{city}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="cp-register-row-big">
+    <div class="cp-register-row-small">
+        <div class="dropdown">
+            <label>From:</label>
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"
+                    aria-expanded="true" style="text-align: left; width: 100%;">
+                 <span class="cp-btn-text">Select From</span>
+                <span class="caret" style="float: right; margin-top: 9px;"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation" ng-repeat="route in routes"><a role="menuitem" tabindex="-1"
+                                                                       href="#">{{route}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="cp-register-row-small">
+        <div class="dropdown">
+            <label>To:</label>
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"
+                    aria-expanded="true" style="text-align: left; width: 100%;">
+                 <span class="cp-btn-text">Select To</span>
+                <span class="caret" style="float: right; margin-top: 9px;"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation" ng-repeat="route in routes"><a role="menuitem" tabindex="-1"
+                                                                       href="#">{{route}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="cp-register-row-big">
+    <div class="cp-register-row-small">
+        <label>Date:</label>
+
+        <p class="input-group">
+            <input type="text" class="form-control" is-open="opened" ng-model="aa"
+                   datepicker-popup="dd-MMMM-yyyy"
+                   datepicker-options="dateOptions" show-button-bar="false"/>
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="open($event)"><i
+                            class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+        </p>
+    </div>
+    <div class="cp-register-row-small">
+        <div class="dropdown">
+            <label>Time:</label>
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"
+                    aria-expanded="true" style="text-align: left; width: 100%;">
+                 <span class="cp-btn-text">Select Time</span>
+                <span class="caret" style="float: right; margin-top: 9px;"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation" ng-repeat="time in times"><a role="menuitem" tabindex="-1"
+                                                                     href="#">{{time}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="cp-register-row-big">
+    <div class="cp-register-row-small">
+        <div class="dropdown">
+            <label>Route 1:</label>
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"
+                    aria-expanded="true" style="text-align: left; width: 100%;">
+                 <span class="cp-btn-text">Select Route</span>
+                <span class="caret" style="float: right; margin-top: 9px;"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation" ng-repeat="route in routes"><a role="menuitem" tabindex="-1"
+                                                                       href="#">{{route}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="cp-register-row-small">
+        <button class="btn cp-btn-warning" ng-click="addRoute()">Add Route</button>
+    </div>
+</div>
+<div class="cp-register-row-big" ng-repeat="rt in selectedRoutes">
+    <div class="cp-register-row-small">
+        <div class="dropdown">
+            <label>Route {{rt.index}}:</label>
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"
+                    aria-expanded="true" style="text-align: left; width: 100%;">
+                 <span class="cp-btn-text">Select Route</span>
+                <span class="caret" style="float: right; margin-top: 9px;"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation" ng-repeat="route in routes"><a role="menuitem" tabindex="-1"
+                                                                       href="#">{{route}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="cp-register-row-small">
+        <button class="btn cp-btn-warning remove" ng-click="removeRoute(rt)">Remove Route</button>
+    </div>
+</div>
+<!--<div class="cp-register-row-big">
+    <div class="cp-register-row-small">
+        <div class="dropdown">
+            <label>Route 3:</label>
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"
+                    aria-expanded="true" style="text-align: left; width: 100%;">
+                Select Route
+                <span class="caret" style="float: right; margin-top: 9px;"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation" ng-repeat="route in routes"><a role="menuitem" tabindex="-1"
+                                                                      href="#">{{route}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>-->
+<div class="cp-register-row-big">
+    <div class="cp-register-row-small">
+        <label>Vehicle No:</label>
+        <input type="text"/>
+    </div>
+    <div class="cp-register-row-small">
+        <div class="dropdown">
+            <label>No. of Seats:</label>
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"
+                    aria-expanded="true" style="text-align: left; width: 100%;">
+                 <span class="cp-btn-text">Select No.</span>
+                <span class="caret" style="float: right; margin-top: 9px;"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation" ng-repeat="seat in seats"><a role="menuitem" tabindex="-1"
+                                                                     href="#">{{seat}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="cp-register-row-big">
+    <div class="cp-register-row-small">
+        <label>Car Type:</label>
+        <input type="text"/>
+    </div>
+    <div class="cp-register-row-small">
+        <label>Contact Detail:</label>
+        <input type="text"/>
+    </div>
+</div>
+<div class="cp-register-row-big">
+    <div class="cp-register-row-small">
+        <input type="checkbox"/><span>Female only</span>
+    </div>
+</div>
+<div class="cp-register-row-big">
+    <label>Further Details:</label>
+    <label>Please add further details about your ride - it'll save you answering lots of <br>questions from
+        co-travellers.</label>
+    <textarea style="width: 100%; height: 238px;" cols="50" ng-focus="isTxtareaFucos = true"></textarea>
+    <label ng-show="isTxtareaFucos">Strongly recommend to complete this because it allows co-traveller to know a bit more about your planned journey like
+        taking a halt during journey before co-traveller choose to share the ride.</label>
+</div>
+<div class="cp-register-row-big">
+    <button class="btn cp-btn-submit">Submit</button>
+</div>

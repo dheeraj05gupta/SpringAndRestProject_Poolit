@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="main.java.com.jersey.dataaccess.dao.UserProfile" table="user_table_v1">
+        <id name="userNo" type="java.lang.Integer">
+            <column name="user_no" />
+            <generator class="identity" />
+        </id>
+        
+        <property name="firstName" type="java.lang.String">
+            <column name="first_name" length="20" not-null="true" unique="false" />
+        </property>
+        <property name="lastName" type="java.lang.String">
+            <column name="last_name" length="20" not-null="true" unique="false" />
+        </property>
+        <property name="email" type="java.lang.String">
+            <column name="email" length="30" not-null="true" unique="false" />
+        </property>
+        <property name="mobileNo" type="java.lang.String">
+            <column name="mobile_no" length="12" not-null="true" unique="false" />
+        </property>
+        <property name="company" type="java.lang.String">
+            <column name="company" length="25" not-null="true" unique="false" />
+        </property>
+         <property name="birthDate" type="java.util.Date">
+            <column name="birth_date" />
+        </property>
+         <property name="password" type="java.lang.String">
+            <column name="password" />
+        </property>
+        <property name="gender" type="java.lang.String">
+            <column name="gender" />
+        </property>
+         <property name="location" type="java.lang.String">
+            <column name="location" />
+        </property>
+         <property name="otp" type="java.lang.Integer">
+            <column name="otp" />
+        </property>
+        <property name="verified" type="java.lang.Integer">
+            <column name="verified" />
+        </property>
+        <property name="userRating" type="java.lang.Integer">
+            <column name="user_rating" />
+        </property>
+        <property name="vehicleNo" type="java.lang.String">
+            <column name="vehicle_no" />
+        </property>
+        <property name="vehicleType" type="java.lang.String">
+            <column name="vehicle_type" />
+        </property>
+    </class>
+</hibernate-mapping>

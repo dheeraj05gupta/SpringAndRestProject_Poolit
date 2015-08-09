@@ -1,0 +1,56 @@
+<div class="modal-header">
+    <div class="cp-modal-close" ng-click="cancel()">X</div>
+    <h3 class="modal-title" style="text-align: center; font-weight: bold;">FEEDBACK</h3>
+</div>
+<div class="modal-body">
+    <div class="cp-feedback-cont">
+        <div class="cp-feedback-left">
+            <div class="cp-register-row-big">
+                <label>Your Name:<span style="color: red;">*</span></label>
+                <input type="text"/>
+            </div>
+            <div class="cp-register-row-big">
+                <label>Email address:<span style="color: red;">*</span></label>
+                <input type="text"/>
+            </div>
+            <div class="cp-register-row-big">
+                <label>Mobile No:<span style="color: red;">*</span></label>
+                <input type="text"/>
+            </div>
+            <div class="cp-register-row-big">
+                <label>City:<span style="color: red;">*</span></label>
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                            aria-expanded="true" style="text-align: left; width: 100%;">
+                        Select City
+                        <span class="caret" style="float: right; margin-top: 9px;"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                        <li role="presentation" ng-repeat="city in cities"><a role="menuitem" tabindex="-1" href="#">{{city}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="cp-feedback-right">
+            <div class="cp-register-row-big">
+                <label>Comments:<span style="color: red;">*</span></label>
+                <textarea style="width: 100%; height: 238px;" cols="50"></textarea>
+            </div>
+
+        </div>
+        <div class="cp-register-row-big">
+            <button class="btn cp-btn-submit">Submit</button>
+        </div>
+    </div>
+</div>
+<div class="modal-footer" ng-show="isAlert">
+
+</div>
+
+
+
+
+
+
+

@@ -1,0 +1,102 @@
+<form name="registrationForm" novalidate>
+    <div style="float: left; margin:0 0 20px; width:100%;">
+        <div class="cp-register-cont">
+            <h3>Sign Up</h3>
+
+            <div class="cp-register-row-big">
+
+                <div class="cp-register-row-small">
+                    <label>First Name:</label>
+                    <input type="text" ng-model="registeredUser.firstName" required/>
+                </div>
+                <div class="cp-register-row-small">
+                    <label>Last Name:</label>
+                    <input type="text" ng-model="registeredUser.lastName" required/>
+                </div>
+            </div>
+            <div class="cp-register-row-big">
+                <label>Email:</label>
+                <input type="text" ng-model="registeredUser.email" required/>
+            </div>
+            <div class="cp-register-row-big">
+                <label>Mobile Number:</label>
+                <input type="text" ng-model="registeredUser.mobileNo" required/>
+            </div>
+            <div class="cp-register-row-big">
+                <label>Company:</label>
+                <input type="text" ng-model="registeredUser.company"/>
+            </div>
+            <div class="cp-register-row-big">
+                <div class="cp-register-row-small">
+                    <label>Birthday:</label>
+
+                    <p class="input-group">
+                        <input type="text" class="form-control" is-open="opened" ng-model="registeredUser.birthDate"
+                               datepicker-popup="dd-MMMM-yyyy"
+                               datepicker-options="dateOptions" show-button-bar="false" required/>
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="open($event)"><i
+                            class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+                    </p>
+                </div>
+            </div>
+            <div class="cp-register-row-big">
+                <div class="cp-register-row-small">
+                    <label>Password:</label>
+                    <input type="password" ng-model="registeredUser.password" required/>
+                </div>
+                <div class="cp-register-row-small">
+                    <label>Confirm password:</label>
+                    <input type="password" ng-model="registeredUser.confirmPassword" required/>
+                </div>
+            </div>
+            <div class="cp-register-row-big">
+                <label>Gender:</label>
+                <input type="radio" ng-model="registeredUser.gender" value="M"/><span>Male</span>
+                <input type="radio" ng-model="registeredUser.gender" value="F"/><span>Female</span>
+            </div>
+            <div class="cp-register-row-big">
+                <div class="cp-register-row-small">
+                    <label>Location:</label>
+
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+                                data-toggle="dropdown"
+                                aria-expanded="true" style="text-align: left; width: 100%;">
+                            <span class="cp-btn-text">{{registeredUser.location == null ? 'Select City' : registeredUser.location}}</span>
+                            <span class="caret" style="float: right; margin-top: 9px;"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                            <li role="presentation" ng-repeat="city in cities"><a role="menuitem" tabindex="-1"
+                                                                                  ng-click="changeCity(city)">{{city}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="cp-register-row-big">
+                <button class="btn cp-btn-warning" ng-click="getOtp()"
+                        ng-disabled="registrationForm.$invalid || registeredUser.location == null">Request OTP
+                </button>
+                <span ng-hide="registrationForm.$invalid || registeredUser.location == null"
+                      style="color: black; margin-left: 10px;">Please click on Request OTP button for mobile verification.</span>
+            </div>
+            <div class="cp-register-row-big" ng-if="isOtpSent">
+                <div class="cp-register-row-small">
+                    <label>Enter OTP:</label>
+                    <input type="text" ng-model="registeredUser.otp"/>
+                </div>
+            </div>
+            <div class="cp-register-row-big" ng-if="isOtpSent">
+                <button class="btn cp-btn-submit" ng-click="registerUser()"
+                        ng-disabled="registrationForm.$invalid || registeredUser.location == null || registeredUser.otp == null || registeredUser.otp == ''">
+                    Sign Up
+                </button>
+            </div>
+            <div class="cp-register-row-big" ng-if="alertVisible">
+                <p style="color: red">{{alertMessage}}</p>
+            </div>
+        </div>
+    </div>
+</form>

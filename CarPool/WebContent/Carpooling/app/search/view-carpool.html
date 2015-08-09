@@ -1,0 +1,140 @@
+<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+		<!-- need to load google places library -->
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+
+<div class="cp-register-row-big" ng-show="isLocal">
+    <div class="cp-register-row-small">
+        <div class="dropdown">
+            <label>City:</label>
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"
+                    aria-expanded="true" style="text-align: left; width: 100%;">
+                <span class="cp-btn-text">Select City</span>
+                <span class="caret" style="float: right; margin-top: 9px;"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation" ng-repeat="city in cities"><a role="menuitem" tabindex="-1"
+                                                                      href="#">{{city}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="cp-register-row-big">
+    <div class="cp-register-row-small">
+        <div class="dropdown">
+           <!--  <label>From:</label>
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"
+                    aria-expanded="true" style="text-align: left; width: 100%;">
+                <span class="cp-btn-text">Select From</span>
+                <span class="caret" style="float: right; margin-top: 9px;"></span>
+            </button> -->
+            <!-- <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation" ng-repeat="route in routes"><a role="menuitem" tabindex="-1"
+                                                                       href="#">{{route}}</a>
+                </li>
+            </ul> -->
+            
+          <div id="locationField">
+              <input id="autocomplete" placeholder="From:" onFocus="geolocate()" type="text"></input>
+          </div>
+        </div>
+    </div>
+    <div class="cp-register-row-small">
+        <div class="dropdown">
+            <label>To:</label>
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"
+                    aria-expanded="true" style="text-align: left; width: 100%;">
+                <span class="cp-btn-text">Select To</span>
+                <span class="caret" style="float: right; margin-top: 9px;"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation" ng-repeat="route in routes"><a role="menuitem" tabindex="-1"
+                                                                       href="#">{{route}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="cp-register-row-big">
+    <div class="cp-register-row-small">
+        <label>Date:</label>
+
+        <p class="input-group">
+            <input type="text" class="form-control" is-open="opened" ng-model="aa"
+                   datepicker-popup="dd-MMMM-yyyy"
+                   datepicker-options="dateOptions" show-button-bar="false"/>
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="open($event)"><i
+                            class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+        </p>
+    </div>
+    <div class="cp-register-row-small">
+        <div class="dropdown">
+            <label>Time:</label>
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"
+                    aria-expanded="true" style="text-align: left; width: 100%;">
+                <span class="cp-btn-text">Select Time</span>
+                <span class="caret" style="float: right; margin-top: 9px;"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation" ng-repeat="time in times"><a role="menuitem" tabindex="-1"
+                                                                     href="#">{{time}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="cp-register-row-big">
+    <div class="cp-register-row-small">
+        <label>Company:</label>
+        <input type="text"/>
+    </div>
+</div>
+<div class="cp-register-row-big">
+    <div class="cp-register-row-small">
+        <input type="checkbox"/><span>Female only</span>
+    </div>
+</div>
+<div class="cp-register-row-big">
+    <button class="btn cp-btn-submit" ng-click="searchCarpool()">Search</button>
+</div>
+<div class="cp-register-row-big double" ng-if="isSearched">
+    <div class="cp-table">
+        <div class="cp-table-row">
+            <div class="cp-table-column">Name</div>
+            <div class="cp-table-column">Depart</div>
+            <div class="cp-table-column">via Route</div>
+            <div class="cp-table-column">Seats</div>
+            <div class="cp-table-column">Rating</div>
+            <div class="cp-table-column">Contact</div>
+        </div>
+        <div class="cp-table-body">
+            <div class="cp-table-row" ng-repeat="result in filteredResults">
+                <div class="cp-table-column">
+                    <p>{{result.Name}}</p>
+                    <span>{{result.CarType}}</span>
+                </div>
+                <div class="cp-table-column">{{result.Time}}</div>
+                <div class="cp-table-column">
+                    <p ng-repeat="rt in result.Routes">{{rt}}</p>
+                </div>
+                <div class="cp-table-column">{{result.Seats}}</div>
+                <div class="cp-table-column star-column">
+                    <span ng-repeat="st in result.Rating track by $index" class="cp-star-span"></span>
+                </div>
+                <div class="cp-table-column">
+                    <button class="btn cp-btn-warning" ng-click="openDetails()">View</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cp-pagination-cont">
+        <div class="cp-pagination-cell" ng-click="goToPage('last')"><span>>></span></div>
+        <div class="cp-pagination-cell" ng-click="goToPage('next')"><span>></span></div>
+        <div class="cp-pagination-cell"><span>{{currentPage}}</span></div>
+        <div class="cp-pagination-cell" ng-click="goToPage('prev')"><span><</span></div>
+        <div class="cp-pagination-cell" ng-click="goToPage('first')"><span><<</span></div>
+    </div>
+</div>

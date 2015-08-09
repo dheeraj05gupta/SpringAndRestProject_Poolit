@@ -1,0 +1,103 @@
+<div style="float: left; margin:20px 0; width:100%; height: 570px;">
+    <div class="cp-my-profile-cont">
+        <div style="float: left; width: 100%; height: 50px">
+            Welcome Username
+        </div>
+        <div class="cp-my-profile-menu">
+            <div class="btn-group">
+                <label class="btn btn-primary" ng-model="radioModel" btn-radio="'UpdateProfile'">Update Profile</label>
+                <label class="btn btn-primary"><a href="#/search">Search Carpool</a></label>
+                <label class="btn btn-primary" ng-model="radioModel" btn-radio="'PostedAdd'">Posted Add</label>
+                <label class="btn btn-primary" ng-model="radioModel" btn-radio="'Report'">Report</label>
+                <label class="btn btn-primary" ng-model="radioModel" btn-radio="'Invites'">Invites</label>
+            </div>
+        </div>
+        <div class="cp-my-profile-body">
+            <div ng-show="radioModel == 'UpdateProfile'">
+                <div class="cp-edit-div">
+                    <a ng-click="doEditProfile(false)">Edit</a>
+                    <hr>
+                </div>
+                <div>
+                    <div class="cp-my-profile-row">
+                        <label>First Name</label>
+                        <label ng-hide="editProfile">{{user.firstName}}</label>
+                        <input type="text" ng-show="editProfile" ng-model="user.firstName"/>
+                    </div>
+                    <div class="cp-my-profile-row">
+                        <label>Last Name</label>
+                        <label ng-hide="editProfile">{{user.lastName}}</label>
+                        <input type="text" ng-show="editProfile" ng-model="user.lastName"/>
+                    </div>
+                    <div class="cp-my-profile-row">
+                        <label>Email</label>
+                        <label ng-hide="editProfile">{{user.email}}</label>
+                        <input type="text" ng-show="editProfile" ng-model="user.email"/>
+                    </div>
+                    <div class="cp-my-profile-row">
+                        <label>Mobile Number</label>
+                        <label ng-hide="editProfile">{{user.phone}}</label>
+                        <input type="text" ng-show="editProfile" ng-model="user.phone"/>
+                    </div>
+                    <div class="cp-my-profile-row" ng-show="editProfile">
+                        <button class="btn cp-btn-submit" ng-click="doSaveProfile(false)">Save</button>
+                    </div>
+                </div>
+                <div class="cp-edit-div">
+                    <a ng-click="doEditProfile(true)">Edit</a>
+                    <hr>
+                </div>
+                <div>
+                    <div class="cp-my-profile-row">
+                        <label>Current Password</label>
+                        <label ng-hide="editPassword">******</label>
+                        <input type="password" ng-show="editPassword" ng-model="user.password"/>
+                    </div>
+                    <div class="cp-my-profile-row" ng-show="editPassword">
+                        <label>New Password</label>
+                        <input type="password" ng-show="editPassword" ng-model="user.newPassword"/>
+                    </div>
+                    <div class="cp-my-profile-row" ng-show="editPassword">
+                        <label>Confirm Password</label>
+                        <input type="password" ng-model="user.confirmPassword"/>
+                    </div>
+                    <div class="cp-my-profile-row" ng-show="editPassword">
+                        <button class="btn cp-btn-submit" ng-click="doSaveProfile(true)">Save</button>
+                    </div>
+                </div>
+            </div>
+            <div ng-show="radioModel == 'PostedAdd'">
+                <div class="cp-edit-div">
+                    <div style="width: 100%; height: 15px;">
+                        <div style="width: 20%; float: left; text-align: left;">From</div>
+                        <div style="width: 20%; float: left; text-align: left;">To</div>
+                        <div style="width: 30%; float: left; text-align: left;">Date</div>
+                        <div style="width: 15%; float: left; text-align: left;">Vehicle No</div>
+                        <div style="width: 15%; float: left; text-align: left;">No of Seats</div>
+                    </div>
+                    <hr>
+                    <div ng-repeat="ad in ads track by $index" style="width: 100%; float: left; margin-top: 15px;">
+                        <div style="width: 20%; float: left; text-align: left;">{{ad.fromLocal}}</div>
+                        <div style="width: 20%; float: left; text-align: left;">{{ad.toLocal}}</div>
+                        <div style="width: 30%; float: left; text-align: left;">{{ad.dateTime | date:'dd/MM/yyyy HH:mm'}}</div>
+                        <div style="width: 15%; float: left; text-align: left;">{{ad.vehicleNo}}</div>
+                        <div style="width: 15%; float: left; text-align: left;">{{ad.seatsAvailable}}</div>
+                    </div>
+                </div>
+            </div>
+            <div ng-show="radioModel == 'Report'">
+                Report tab
+            </div>
+            <div ng-show="radioModel == 'Invites'">
+                <div style="margin: 20px; width: calc(100% - 40px); height: auto;">
+                    <label style="color: grey; font-weight: normal; width: 100%;">Invites your friends via email</label>
+                    <input type="text" placeholder="Enter friends email" style="float: left; margin-right: 10px;"/>
+                    <button class="btn cp-btn-warning"
+                            style="float: left; padding: 6px 12px 5px; background-color: #8DD3DC; border-color: #43B3D9; color: #fff;">
+                        Invites friends
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

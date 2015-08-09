@@ -1,0 +1,541 @@
+
+body {
+    margin: 0;
+    font: normal 13px Arial;
+    color: black;
+}
+
+p {
+    margin: 0;
+}
+
+textarea {
+    resize: none;
+    border-radius: 4px;
+}
+
+label > a, label > a:hover, label > a:focus, label > a:active {
+    text-decoration: none;
+    color: #000;
+}
+
+input[type="text"], input[type="password"] {
+    font-size: 13px;
+    line-height: 31px;
+    padding: 0 10px;
+    border-radius: 4px;
+    border: 1px #a5a5a5 solid;
+}
+
+.btn-group > .btn-primary {
+    width: 150px;
+    color: #000;
+    background-color: #eeeeee;
+    border-color: #dddddd;
+}
+
+.btn-group > .btn-primary.active, .btn-group > .btn-primary:hover, .btn-group > .btn-primary:focus {
+    color: #000;
+    background-color: #888888;
+    border-color: #dddddd;
+}
+
+a {
+    cursor: pointer;
+}
+
+.cp-modal-body-cont {
+    width: 100%;
+    text-align: center;
+}
+
+.cp-modal-body-cont > input {
+    width: 250px;
+}
+
+.cp-modal-body-cont > input:nth-child(3) {
+    margin-top: 15px;
+}
+
+.cp-modal-body-btns {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.cp-modal-body-btns > button, .cp-modal-body-btns > input {
+    width: 100px;
+}
+
+.cp-modal-body-btns > button:first-child, .cp-modal-body-btns > input:first-child {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    background-color: #49AA48;
+    border-color: #089907;
+    color: #fff;
+}
+
+.cp-modal-body-btns > button:last-child {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    background-color: #8DD3DC;
+    border-color: #43B3D9;
+    color: #fff;
+}
+
+.cp-modal-window .modal-header {
+    border-bottom: none;
+}
+
+.cp-modal-window .modal-footer {
+    border-top: none;
+    background-color: red;
+    border-radius: 0 0 4px 4px;
+    text-align: center;
+}
+
+.cp-modal-window .modal-footer > p {
+    margin: 10px 0;
+}
+
+.cp-modal-window .modal-dialog {
+    margin: 200px auto;
+}
+
+.modal.fade .modal-dialog {
+    -webkit-transition: -webkit-transform .3s ease-out;
+    -o-transition: -o-transform .3s ease-out;
+    transition: transform .3s ease-out;
+    -webkit-transform: translate(0, -100%);
+    -ms-transform: translate(0, -100%);
+    -o-transform: translate(0, -100%);
+    transform: translate(0, -100%);
+}
+
+.modal.fade.in .modal-dialog {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+}
+
+.cp-modal-close {
+    position: absolute;
+    color: red;
+    font: bold 30px Arial;
+    right: -10px;
+    top: -15px;
+    cursor: pointer;
+    height: 150px;
+}
+
+.cp-feedback-div {
+    position: fixed;
+    width: 90px;
+    height: 20px;
+    background-color: orange;
+    right: -35px;
+    top: calc(50% - 35px);
+    transform: rotate(-90deg);
+    color: white;
+    text-align: center;
+    z-index: 100;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+.cp-modal-body-bottom {
+    width: 100%;
+    margin-top: 20px;
+    color: grey;
+    padding: 0 20px;
+}
+
+.cp-modal-body-bottom > a, .cp-modal-body-bottom > a:hover, .cp-modal-body-bottom > a:active {
+    color: grey;
+}
+
+.cp-footer {
+    border-top: 2px solid grey;
+    width: 100%;
+    float: left;
+    padding: 20px 0;
+}
+
+.cp-footer a {
+    margin-right: 20px;
+}
+
+.cp-register-cont {
+    margin: 0 auto;
+    padding: 10px;
+    width: 600px;
+}
+
+.cp-about-us-cont {
+    margin: 0 auto;
+    padding: 10px;
+    width: 1200px;
+}
+
+.cp-about-us-left {
+    float: left;
+    width: 100px;
+}
+
+.cp-about-us-right {
+    float: left;
+    width: calc(100% - 120px);
+    margin-left: 20px;
+}
+
+.cp-feedback-cont {
+    width: 100%;
+    height: 330px;
+}
+
+.cp-feedback-left {
+    width: calc(50% - 20px);
+    height: auto;
+    float: left;
+}
+
+.cp-feedback-right {
+    margin-left: 20px;
+    width: 50%;
+    height: auto;
+    float: left;
+}
+
+.cp-feedback-left input, .cp-feedback-left label, .cp-feedback-right input, .cp-feedback-right label {
+    width: 100%;
+}
+
+.cp-feedback-left label, .cp-feedback-left span, .cp-feedback-right label, .cp-feedback-right span {
+    color: grey;
+    font-weight: normal;
+}
+
+.cp-register-cont input:not([type="radio"]), .cp-register-cont label {
+    width: 100%;
+}
+
+.cp-register-cont input[type="checkbox"] {
+    width: auto;
+}
+
+.cp-register-cont input[type="radio"], .cp-register-cont input[type="checkbox"] {
+    margin: 4px 6px 0 0;
+}
+
+.cp-register-cont span + input[type="radio"] {
+    margin-left: 30px;
+}
+
+.cp-register-cont label, .cp-register-cont span {
+    color: grey;
+    font-weight: normal;
+
+}
+
+.cp-register-cont .cp-register-row-big > .cp-btn-warning {
+    background-color: #8DD3DC;
+    border-color: #43B3D9;
+    color: #fff;
+}
+
+.cp-register-cont .cp-register-row-big > .cp-btn-submit {
+    background-color: #49AA48;
+    border-color: #089907;
+    color: #fff;
+}
+
+.cp-register-cont .cp-register-row-small > .cp-btn-warning {
+    background-color: #8DD3DC;
+    border-color: #43B3D9;
+    color: #fff;
+    margin-top: 20px;
+}
+
+.cp-register-cont .cp-register-row-small > .cp-btn-warning.remove {
+    background-color: #8DD3DC;
+    border-color: #43B3D9;
+}
+
+.cp-feedback-cont .cp-register-row-big > .cp-btn-submit {
+    background-color: #49AA48;
+    border-color: #089907;
+    color: #fff;
+    margin: 0 auto;
+    display: block;
+}
+
+.cp-register-row-big {
+    width: 100%;
+    float: left;
+    margin-top: 15px;
+}
+
+.cp-register-row-big.double {
+    width: calc(200% - 30px);
+    height: auto;
+    margin-top: 30px;
+}
+
+.cp-register-row-small {
+    width: 48%;
+    float: left;
+}
+
+.cp-register-row-small + .cp-register-row-small {
+    float: right;
+}
+
+.cp-my-profile-cont {
+    margin: 0 auto;
+    width: 1200px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100%;
+}
+
+.cp-my-profile-menu {
+    width: 150px;
+    float: left;
+    margin-top: 170px;
+}
+
+.cp-my-profile-body {
+    width: 600px;
+    height: calc(100% - 50px);
+    float: left;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+}
+
+.cp-my-profile-menu > .btn-group > .btn:first-child:not(:last-child) {
+    border-radius: 4px 0 0 0;
+}
+
+.cp-my-profile-menu > .btn-group > .btn:last-child:not(:first-child) {
+    border-radius: 0 0 0 4px;
+}
+
+.cp-my-profile-menu .btn-group .btn + .btn {
+    clear: left;
+    margin: 0;
+}
+
+.cp-my-profile-body > div {
+    width: 100%;
+    height: 100%;
+}
+
+.cp-edit-div {
+    margin: 20px 20px 0;
+    width: calc(100% - 40px);
+    height: auto;
+    text-align: right;
+}
+
+.cp-edit-div > hr {
+    margin: 5px 0 0;
+    border-top: 2px solid lightgray;
+    clear: left;
+}
+
+.cp-my-profile-row {
+    margin: 15px 20px 0;
+    width: calc(100% - 40px);
+    float: left;
+    height: 33px;
+}
+
+.cp-my-profile-row > label {
+    margin: 9px 20px 0 0;
+    color: grey;
+    font-weight: normal;
+    width: 125px;
+}
+
+.cp-details-row {
+    margin: 15px 0 0;
+    width: 100%;
+    height: 33px;
+    text-align: center;
+}
+
+.cp-details-row > label {
+    margin: 9px 20px 0 0;
+    color: grey;
+    font-weight: normal;
+    width: 125px;
+}
+
+.cp-my-profile-body .cp-my-profile-row > .cp-btn-submit {
+    background-color: #49AA48;
+    border-color: #089907;
+    color: #fff;
+}
+
+.dropdown-menu {
+    overflow-y: auto;
+    max-height: 238px;
+}
+
+.cp-table {
+    width: 100%;
+    height: auto;
+    float: left;
+}
+
+.cp-table-row {
+    width: 100%;
+    height: 40px;
+    float: left;
+    color: #000000;
+    border-bottom: 1px #a5a5a5 solid;
+    background-color: #888888;
+}
+
+.cp-table-body .cp-table-row {
+    height: 60px;
+    background-color: transparent;
+    color: black;
+}
+
+.cp-table-body .cp-table-row:nth-child(2n) {
+    background-color: lightgray;
+}
+
+.cp-table > .cp-table-row:first-child {
+    border: 0;
+}
+
+.cp-table-column {
+    width: 16.5%;
+    float: left;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ffffff;
+}
+
+.cp-table-column.star-column {
+    padding-left: 70px;
+}
+
+.cp-table-body {
+    float: left;
+    width: 100%;
+    height: auto;
+}
+
+.cp-table-body > .cp-table-row > .cp-table-column {
+    color: black;
+}
+
+.cp-table-body > .cp-table-row > .cp-table-column > .cp-btn-warning {
+    background-color: #8DD3DC;
+    border-color: #43B3D9;
+    color: #fff;
+    padding: 2px 16px;
+}
+
+#carpool-app .modal-backdrop {
+    position: fixed;
+}
+
+.cp-pagination-cont {
+    float: right;
+    margin: 20px 20px 0 0;
+    height: 30px;
+    border: 1px #a5a5a5 solid;
+    border-radius: 4px;
+}
+
+.cp-pagination-cont .cp-pagination-cell {
+    border-left: 1px #a5a5a5 solid;
+    height: 100%;
+    width: 30px;
+    float: right;
+    text-align: center;
+    cursor: pointer;
+}
+
+.cp-pagination-cont .cp-pagination-cell:hover {
+    background-color: #a5a5a5;
+}
+
+.cp-pagination-cont .cp-pagination-cell span {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    float: left;
+    width: 100%;
+    color: black;
+}
+
+.cp-pagination-cont .cp-pagination-cell:hover span {
+    color: #ffffff;
+}
+
+.cp-pagination-cont .cp-pagination-cell:nth-child(3) {
+    cursor: default;
+}
+
+.cp-pagination-cont .cp-pagination-cell:hover:nth-child(3) {
+    background-color: transparent;
+}
+
+.cp-pagination-cont .cp-pagination-cell:hover:nth-child(3) span {
+    color: #000000;
+}
+
+.cp-pagination-cont .cp-pagination-cell:last-child {
+    border: 0;
+}
+
+.cp-star-span {
+    background-image: url('../image/star-full-icon.png');
+    width: 16px;
+    height: 16px;
+    float: left;
+    background-size: contain;
+}
+
+.cp-logo-div {
+    float: left;
+    font-size: 24px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    background-image: url('../image/logo.jpg');
+    width: 200px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 110px;
+    cursor: pointer;
+}
+
+.cp-about-us-p-title {
+    width: 100%;
+    background-color: lightgray;
+    padding: 5px;
+}
+
+.cp-about-us-p-text {
+    width: 100%;
+    line-height: 2;
+    margin: 10px 0;
+}
+
+.cp-search-cont .cp-register-cont {
+    margin: 0 0 0 40px;
+}
+
+button .cp-btn-text {
+    color: black;
+    float: left;
+}

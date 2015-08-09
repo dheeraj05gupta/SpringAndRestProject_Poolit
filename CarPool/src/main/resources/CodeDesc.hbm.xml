@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="main.java.com.jersey.dataaccess.dao.CodeDesc" table="code_desc">
+        <id name="code" type="java.lang.String">
+            <column name="cp_code" />
+            <generator class="assigned"/>
+        </id>
+   
+        <property name="desc" type="java.lang.String">
+            <column name="cp_desc" length="200" not-null="true"  />
+        </property>
+    </class>
+</hibernate-mapping>

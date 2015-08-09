@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 6, 2015 7:52:03 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="main.java.com.jersey.dataaccess.dao.CpAdvertisement" table="cp_advertisement_v1">
+        <id name="addNo" type="java.lang.Integer">
+            <column name="add_no" />
+            <generator class="identity" />
+        </id>
+     
+        <property name="addType" type="java.lang.String">
+            <column name="add_type" />
+        </property>
+        <property name="city" type="java.lang.String">
+            <column name="city" />
+        </property>
+        <property name="fromCity" type="java.lang.String">
+            <column name="from_city" />
+        </property>
+        <property name="toCity" type="java.lang.String">
+            <column name="to_city" />
+        </property>
+        <property name="fromLocal" type="java.lang.String">
+            <column name="from_local" />
+        </property>
+        <property name="toLocal" type="java.lang.String">
+            <column name="to_local" />
+        </property>
+        <property name="dateTime" type="java.util.Date">
+            <column name="date_time" />
+        </property>
+        <property name="viaRoute1" type="java.lang.String">
+            <column name="via_route1" />
+        </property>
+        <property name="viaRoute2" type="java.lang.String">
+            <column name="via_route2" />
+        </property>
+        <property name="viaRoute3" type="java.lang.String">
+            <column name="via_route3" />
+        </property>
+        <property name="vehicleNo" type="java.lang.String">
+            <column name="vehicle_no" />
+        </property>
+        <property name="seatsAvailable" type="java.lang.Integer">
+            <column name="seats_available" />
+        </property>
+         <property name="userId" type="java.lang.Integer">
+            <column name="user_no" />
+        </property>
+        <property name="femaleOnly" type="java.lang.Integer">
+            <column name="female_only" />
+        </property>
+        <property name="vehicleType" type="java.lang.String">
+            <column name="vehicle_type" />
+        </property>
+        <property name="comment" type="java.lang.String">
+            <column name="comment" />
+        </property>
+        <property name="flag" type="java.lang.String">
+            <column name="flag" />
+        </property>
+        <property name="status" type="java.lang.String">
+            <column name="status" />
+        </property>
+    </class>
+</hibernate-mapping>

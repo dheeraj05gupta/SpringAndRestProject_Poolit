@@ -1,0 +1,41 @@
+
+<div style="width: 100%; float: left; height: 30px; background-color: lightgray;"></div>
+<div style="width: 100%; float: left; margin: 20px 0; min-height: 600px;">
+    <div style="width: 1200px;overflow: visible; margin: 0 auto; ">
+        <div style="width: 100%; height: 60px; text-align: center; font-size: 24px; float: left;">Some Heading Text
+        </div>
+        <div style="float: left; width: 765px; height: auto;" class="cp-search-cont">
+            <div class="btn-group" style="margin-left: 50px;">
+                <label class="btn btn-primary" ng-model="radioModel" btn-radio="'SearchLocal'">View Local</label>
+                <label class="btn btn-primary" ng-model="radioModel" btn-radio="'SearchConnect'">View Outstation</label>
+                <label class="btn btn-primary" ng-model="radioModel" btn-radio="'Post'" ng-click="postCarpoolTab($event)">Post Ad</label>
+            </div>
+            <!--content part-->
+            <div class="cp-carpool-ad-cont cp-register-cont" ng-show="radioModel == 'SearchLocal'">
+                <view-carpool is-local="true" is-auth="isAuth.isAuthenticated"></view-carpool>
+            </div>
+            <div class="cp-carpool-ad-cont cp-register-cont" ng-show="radioModel == 'SearchConnect'">
+                <view-carpool is-local="false" is-auth="isAuth.isAuthenticated"></view-carpool>
+            </div>
+            <div class="cp-carpool-ad-cont cp-register-cont" ng-show="radioModel == 'Post' && isAuth.isAuthenticated">
+                <div class="cp-register-row-big">
+                    <input type="radio" ng-model="postType" value="local"/><span>Local Post</span>
+                    <input type="radio" ng-model="postType" value="connect"/><span>City Connect Post</span>
+                </div>
+                <post-carpool is-local="true" ng-if="postType == 'local'"></post-carpool>
+                <post-carpool is-local="false" ng-if="postType == 'connect'"></post-carpool>
+            </div>
+        </div>
+        <div style="float: right; width: 390px; height: 320px; margin-right: 45px">
+            <carousel interval="4000">
+                <slide ng-repeat="slide in slides" active="slide.active">
+                    <img ng-src="{{slide.image}}" style="margin:auto;">
+
+                    <div class="carousel-caption">
+                    </div>
+                </slide>
+            </carousel>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="main.java.com.jersey.dataaccess.dao.Student" table="student">
+        <id name="id" type="java.lang.Integer">
+            <column name="STUDENT_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="STUDENT_NAME" length="10" not-null="true" unique="true" />
+        </property>
+        <property name="age" type="int">
+            <column name="STUDENT_Age" length="20" not-null="true" unique="true" />
+        </property>
+    </class>
+</hibernate-mapping>
